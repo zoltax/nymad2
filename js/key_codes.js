@@ -10,4 +10,6 @@ export default {
   D: 68,
 
   Q: 81,
+
+  E: 69,
 };

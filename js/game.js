@@ -5,6 +5,7 @@ import Map from './map';
 import WorldMap from './world_map';
 import InputController from './input_controller';
 import Arena from './arena';
+import EquipArena from './equip_arena';
 
 export default class Game {
   constructor() {
@@ -60,8 +61,17 @@ export default class Game {
     this.scene = new Arena(this.ctx, this.player, this.controller, options.opponents);
   }
 
+  showEquip(options) {
+    this.scene = new EquipArena(this.ctx, this.player, this.controller, options.opponents);
+  }
+
   eventDispatcher(event) {
-    if (event.type == 'fight_start')
+    if (event.type == 'fight_start') {
       this.startFight(event);
+    }
+
+    if (event.type == 'show_equip') {
+      this.showEquip(event);
+    }
   }
 }

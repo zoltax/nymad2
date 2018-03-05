@@ -25,6 +25,10 @@ export default class WorldMap {
       let opponents = [MonstersRepository.find('dummy')];
       this.eventDispatcher({type: 'fight_start', opponents: opponents});
     }
+
+    if (this.controller.isKeyPressed(KB.E)) {
+      this.eventDispatcher({type: 'show_equip'});
+    }
   }
 
   drawBoard() {

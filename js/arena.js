@@ -18,6 +18,7 @@ export default class Arena {
   }
 
   update() {
+
     let destination = this.player.arenaPosition;
 
     if (this.controller.isKeyPressed(KB.LEFT) || this.controller.isKeyPressed(KB.A))
